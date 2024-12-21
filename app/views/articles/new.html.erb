@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"> <%= link_to 'Wikinimous', articles_path %></span>
+  <%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %>
+</nav>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Editing article</h2>
+      <%= render "form", article: @article %>
+    </div>
+  </div>
+</div>

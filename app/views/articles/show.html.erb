@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"> <%= link_to 'Wikinimous', articles_path %></span>
+  <%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %>
+</nav>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-8">
+      <article class="mb-3">
+        <h2>
+          <%= @article.title %>
+          <%= link_to edit_article_path(@article), class: 'text-decoration-none' do %>
+          <i class="fa fa-edit"></i>
+          <% end %>
+          <%= link_to article_path(@article), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-decoration-none' do %>
+          <i class="fa fa-trash"></i>
+          <% end %>
+        </h2>
+        <p><%= @article.content %></p>
+      </article>
+    </div>
+  </div>
+</div>

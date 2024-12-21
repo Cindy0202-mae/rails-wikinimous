@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"> <%= link_to 'Wikinimous', articles_path %></span>
+  <%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %>
+</nav>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-8">
+      <% @articles.each do |article| %>
+      <article class="mb-3">
+        <h2><%= link_to article.title, article_path(article) %></h2>
+        <p><%= article.content %></p>
+      </article>
+      <% end %>
+    </div>
+  </div>
+</div>
